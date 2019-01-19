@@ -44,4 +44,15 @@ function divideBy2 (val) {
 
 console.log(divideBy2(99))
 
-// TODO: 用栈实现汉诺塔
+// 用栈实现汉诺塔
+
+// 递归实现
+function hannt (n, a, b, c) {
+  if (n === 1) {
+    console.log(`把第${n}块从${a}移动到${c}`)
+  } else {
+    hannt(n - 1, a, c, b)
+    console.log(`把第${n}块从${a}移动到${c}`)
+    hannt(n - 1, b, a, c)
+  }
+}
