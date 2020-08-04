@@ -62,8 +62,8 @@ class Queue {
  * }
  */
 class Graph {
-  private vertices: Array<any>
-  private adjList: Dictionary
+  public vertices: Array<any>
+  public adjList: Dictionary
   constructor () {
     this.vertices = [] // 存储图中所有定点的名字
     this.adjList = new Dictionary() // 字典存储邻接表
