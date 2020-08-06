@@ -54,8 +54,8 @@ function hasCirle(node: number, visits: number[], graph: _Graph) {
   // 课程node已被学习
   visits[node] = 1
   // 开始学习node之后可以学习的课程
-  for (let i = 0; i < (graph.adjList.get(node) || []).length; i++) {
-    if (hasCirle((graph.adjList.get(node) || [])[i], visits, graph)) {
+  for (let i = 0; i < graph.adjList.get(node).length; i++) {
+    if (hasCirle(graph.adjList.get(node)[i], visits, graph)) {
       return true
     }
   }
