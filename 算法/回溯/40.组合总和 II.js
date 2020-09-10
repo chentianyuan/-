@@ -37,7 +37,7 @@ let dfs = function (arr, temp, n, result) {
     if (arr[i] === last) continue
     last = arr[i]
     if (total + arr[i] > n) {
-      continue
+      break // 调整为大剪枝
     } else if (total + arr[i] === n) {
       result.push([...temp, arr[i]])
       continue
