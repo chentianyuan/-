@@ -20,7 +20,7 @@ function backtracking (board) {
       for (let k = 1; k <= 9; k++) { // (i, j) 这个位置放k是否合适
         if (isValid(i, j, k, board)) {
           board[i][j] = String(k)
-          if (backtracking(board)) return true; // 如果找到合适一组立刻返回
+          if (backtracking(board)) return true // 如果找到合适一组立刻返回
           // 如果不合适，那么需要把board[i][j]重置为.
           board[i][j] = '.'
         }
