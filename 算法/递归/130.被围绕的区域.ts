@@ -35,6 +35,7 @@ function solve(board: string[][]): string[][] {
     dfs(board, x, y - 1)
     dfs(board, x, y + 1)
   }
+  // 遍历边界上的元素，然后向内遍历，将遇到的O置为A
   for (let i = 0; i < m; i++) {
     dfs(board, 0, i)
     dfs(board, n - 1, i)
