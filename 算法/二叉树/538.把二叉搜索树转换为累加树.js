@@ -30,7 +30,7 @@ function getAdd (arr) {
   if (!arr.length) return 0
   return arr.reduce((a, b) => a + b)
 }
-var convertBST = function(root) {
+var convertBST1 = function(root) {
   if (!root) return root
   let sortArr = []
   let dfs = function (node) {
@@ -55,5 +55,20 @@ var convertBST = function(root) {
 // 暴力解，两次遍历
 // 先中序得排序数组，再中序，累加排序数组中的值
 // 返回
-// 更好思路：
+
+// 反中序 一次遍历
+var convertBST2 = function (root) {
+  if (!root) return root
+  let prev = 0
+  let reversebfs = function (node) {
+    node.right && reversebfs(node.right)
+    node.val += prev
+    prev = node.val
+    node.left && reversebfs(node.left)
+  }
+  reversebfs(root)
+  return root
+}
+
+// 更好的思路：
 // 反中序遍历，记录上一个right.val，加给下个node.val，一次遍历即可
