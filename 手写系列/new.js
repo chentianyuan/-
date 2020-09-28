@@ -7,5 +7,5 @@
 export const _new = function (fn, ...args) {
   let obj = Object.create(fn.prototype)
   let result = fn.apply(obj, args)
-  return typeof result === '[Object object]' ? result : obj
+  return Object.prototype.toString.call(result) === '[object Object]' ? result : obj
 }
