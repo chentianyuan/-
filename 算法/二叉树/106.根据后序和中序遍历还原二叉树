@@ -29,7 +29,7 @@
  * @return {TreeNode}
  */
 var buildTree = function(inorder, postorder) {
-  // inorder = [9,3,15,20,7] 前序
+  // inorder = [9,3,15,20,7] 中序
   // postorder = [9,15,7,20,3] 后序
   let back_idx = postorder.length - 1
   let inorderMap = new Map()
