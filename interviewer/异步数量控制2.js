@@ -7,7 +7,7 @@ function asyncControl (count, list, asyncFn) {
     if (index === list.length) {
       return Promise.resolve()
     }
-    // 这个地方已经把任务推进异步队列等待执行了！！！
+    // 这个地方已经把任务推进异步队列等待执行了！！！但是每次只推一个！！
     let task = Promise.resolve().then(() => asyncFn(list[index++]))
     tasks.push(task)
 
