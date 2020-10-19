@@ -27,7 +27,6 @@ var canPartition = function(nums) {
   const total = getSum(nums)
   if (total % 2 !== 0) return false
   nums = nums.sort((a, b) => b - a)
-  console.log(nums)
   return dfs(nums, total / 2, 0)
 };
 
