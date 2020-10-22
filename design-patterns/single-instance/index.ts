@@ -4,6 +4,7 @@ interface Constructable<T> {
   new (...args: any[]) : T;
 }
 
+// 惰性单例
 const getInstance = (function () {
   let instanceWeakMap = new WeakMap()
   return function (consuctorFn: Constructable<Object>, ...rests: any[]) {
