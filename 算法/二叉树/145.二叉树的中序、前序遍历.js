@@ -53,3 +53,20 @@ var postorderTraversal = function(root) {
 // 解题思路
 // 维护一个stack栈，推入root.left
 // 使用迭代的关键点在于，使用prev记录下上一次推入的root，如果下一次root.right等于prev，说明右节点已经入栈过了，可以将根节点的值推入result，然后把root置空，进入stack的下轮循环
+
+// 二叉树的前序遍历
+var preorderTraversal = function(root) {
+  if (!root) return []
+  let queue = [root]
+  let res = []
+  while (queue.length) {
+    let cur = queue.pop()
+    res.push(cur.val)
+    while (cur) {
+      cur.left && res.push(cur.left.val)
+      cur.right && queue.push(cur.right)
+      cur = cur.left
+    }
+  }
+  return res
+};
